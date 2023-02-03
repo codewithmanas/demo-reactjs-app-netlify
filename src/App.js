@@ -7,6 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         Deployment is going on.
+        <p>hosted on <code>Netlify</code></p>
       </header>
     </div>
   );
