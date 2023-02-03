@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# The Best Way to Host & Deploy a React Application To Netlify
+# Deploy Manually :
+## Steps
+### 1 - Create a folder with your app name (for me "demo-app")
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+then run command :  `npx create-react-app  demo-app`  
+it will create another folder named "demo-app" inside our initial "demo-app" folder
 
-## Available Scripts
+so instead run the command below to create the app directly inside our initial "demo-app" folder
+`npx create-react-app ./`
 
-In the project directory, you can run:
+### 2  - Building process
 
-### `npm start`
+Run `npm start` to run the app on browser
+Run `npm run build` to build (production mode or to minify) the app manually
+After running above command a new folder will be created named **"build"**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 3 - Manual Deployment Process
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To deploy the app manually to netlify we just have to _drag and drop_ the build folder to netlify and that's it.
 
-### `npm test`
+## *Disadvantage of manual deployment
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+In this deployment method , we can't do regular updates to the deployed app.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Deploy from GitHub :
+## Steps
+### 1 - First, make a repo on GitHub Web 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 2 - Then, remote add the app to GitHub Web
+- git init => for initialize git
+- git add . => for staging all the files to git
+- git commit -m "first commit" => for commit to git with a commit message
+- git branch -M main => to change the branch name to "main" which in initially "master" as GitHub officially changed name of branch from `master` to `main`.
+- git remote add origin [git repo url] => for adding local repo to GitHub Web
+- git push -u origin main => to push local repo to remote repo
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 3 - Deployment Process from GitHub
+Go to netlify and just click _New site from Git_ and follow the process ahead.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+>Notes : In this deployment process, we don't have to build the app to production mode (or to minify) , netlify will handle the build process on its own. Here all regular updates will be reflected to app after pushing to GitHub.
